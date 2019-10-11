@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link rel="stylesheet" type="text/css" href="easyUI/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="easyUI/themes/icon.css" />
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        //加载
+        $(function(){
+            //从服务器中获取数据，并显示到下拉列表
+            // 1.使用jquery发送异步请求获取数据(json)，通过js循环操作option
+            // 2.利用easyui绑定数据
+            $('#categoryid').combobox({
+                url:'getCategory',
+                valueField:'id',
+                textField:'name'
+            });
+
+            //使用easuyi提交表单 异步实现添加
+            $("#addButton").click(function(){
+                $('#form1').form('submit', {
+                    url:"addContent",
+                    success:function(data){  //注意:返回的是json字符串
+                        var data=$.parseJSON(data);
+                        if(data.result==1){
+                            $.messager.alert('提示框', '添加成功！噢耶!!', 'info');
+                            $('#form1')[0].reset();//清空表单
+                        }else{
+                            $.messager.alert('提示框', '添加失败！噢耶!!', 'info');
+                        }
+
+                    }
+                });
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+<p>》》 添加广告</p>
+<form method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <p>类别:
+        <select name="categoryId" id="categoryid" style="width: 120px" class="easyui-validatebox" required missingMessage="请选择!!!"></select>
+    </p>
+    <p>标题:
+        <input type="text" name="title"  class="easyui-validatebox" required missingMessage="请填写!!!" id="textfield" />
+    </p>
+    <p>URL:
+        <input type="text" name="url" class="easyui-validatebox" required missingMessage="请填写!!!" id="textfield2" />
+    </p>
+    <p>图片:
+        <input type="file" name="pfile" class="easyui-validatebox" required missingMessage="请选择文件!!!" id="fileField" />
+    </p>
+    <p>状态：
+        <input type="radio" checked name="status" id="radio" value="1" />
+        启用
+        <input type="radio" name="status" id="radio2" value="0" />
+        停用
+    </p>
+    <p>序号:
+        <input type="text" name="sortOrder" class="easyui-validatebox" required missingMessage="请填写!!!" id="textfield3" />
+    </p>
+    <p>
+        <input type="button" name="addButton" id="addButton" value="添加广告" />
+    </p>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

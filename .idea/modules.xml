@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ddybuy_TestFastdfs/ddybuy_TestFastdfs.iml" filepath="$PROJECT_DIR$/ddybuy_TestFastdfs/ddybuy_TestFastdfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddybuy_common_interface/ddybuy_common_interface.iml" filepath="$PROJECT_DIR$/ddybuy_common_interface/ddybuy_common_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddybuy_common_service/ddybuy_common_service.iml" filepath="$PROJECT_DIR$/ddybuy_common_service/ddybuy_common_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddybuy_entity/ddybuy_entity.iml" filepath="$PROJECT_DIR$/ddybuy_entity/ddybuy_entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddybuy_manager_web/ddybuy_manager_web.iml" filepath="$PROJECT_DIR$/ddybuy_manager_web/ddybuy_manager_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddybuy_mapper/ddybuy_mapper.iml" filepath="$PROJECT_DIR$/ddybuy_mapper/ddybuy_mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddybuy_parent.iml" filepath="$PROJECT_DIR$/ddybuy_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddybuy_protocal_web/ddybuy_protocal_web.iml" filepath="$PROJECT_DIR$/ddybuy_protocal_web/ddybuy_protocal_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddybuy_search_web/ddybuy_search_web.iml" filepath="$PROJECT_DIR$/ddybuy_search_web/ddybuy_search_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddybuy_sso_web/ddybuy_sso_web.iml" filepath="$PROJECT_DIR$/ddybuy_sso_web/ddybuy_sso_web.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ddybuy_common_interface" />
+        <module name="ddybuy_common_service" />
+        <module name="ddybuy_entity" />
+        <module name="ddybuy_manager_web" />
+        <module name="ddybuy_mapper" />
+        <module name="ddybuy_protocal_web" />
+        <module name="ddybuy_search_web" />
+        <module name="ddybuy_sso_web" />
+        <module name="ddybuy_TestFastdfs" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ddybuy_common_interface" target="1.8" />
+      <module name="ddybuy_common_service" target="1.8" />
+      <module name="ddybuy_datialitem_web" target="1.8" />
+      <module name="ddybuy_entity" target="1.5" />
+      <module name="ddybuy_item_web" target="1.8" />
+      <module name="ddybuy_manager_web" target="1.8" />
+      <module name="ddybuy_mapper" target="1.5" />
+      <module name="ddybuy_parent" target="1.8" />
+      <module name="ddybuy_protocal_web" target="1.8" />
+      <module name="ddybuy_search_web" target="1.8" />
+      <module name="ddybuy_search_web (1)" target="1.8" />
+      <module name="ddybuy_sso_web" target="1.8" />
+      <module name="ddybuy_TestFastdfs" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

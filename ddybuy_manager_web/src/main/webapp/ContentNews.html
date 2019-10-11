@@ -1,0 +1,132 @@
+<html>
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="easyUI/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyUI/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="easyUI/css/demo.css">
+    <script src="js/jquery-1.8.3.js"></script>
+    <!--jquery.easyui.min.js包含了easyUI中的所有插件-->
+    <script src="js/jquery.easyui.min.js"></script>
+    <!--<%&#45;&#45;引入district的js&#45;&#45;%>-->
+    <script language="JavaScript" src="js/ContentNews.js"></script>
+</head>
+<body>
+
+
+<!--操作区域工具栏-->
+<div id="ToolBar">
+    <div style="height: 25px;">
+        <a href="javascript:Add()" class="easyui-linkbutton" iconCls="icon-add" plain="true">添加</a>
+        <a href="javascript:ModifyBySelect()" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a>
+        <a href="javascript:DelContent()" class="easyui-linkbutton" iconCls="icon-remove" plain="true">批量删除</a>&nbsp;&nbsp;
+    </div>
+</div>
+<!--<%&#45;&#45;显示广告信息&#45;&#45;%>-->
+<table id="dis" fitColumns="true" rownumbers="true" toolbar="#ToolBar"></table>
+
+
+<!--<%&#45;&#45;添加对话框&#45;&#45;%>-->
+<div id="AddDialog" class="easyui-dialog" buttons="#AddDialogButtons"
+     style="width: 280px; height: 250px; padding: 10px 20px;" closed="true" modal="true">
+    <form id="addDialogForm" method="post">
+        <table>
+            <tr>
+                <td>广告类型名称:</td>
+                <td>
+                    <input type="text" class="easyui-validatebox" required missingMessage="请填写!!!" name="name"
+                           id="bname"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!--定义保存对话框中的按钮-->
+<div id="AddDialogButtons">
+    <a href="javascript:SaveDialog()" class="easyui-linkbutton" iconCls="icon-ok">保存</a>
+    <a href="javascript:CloseDialog('AddDialog')" class="easyui-linkbutton" iconCls="icon-cancel">取消</a>
+</div>
+
+
+<!--<%&#45;&#45;修改对话框&#45;&#45;%>-->
+<div id="upDialog" class="easyui-dialog" buttons="#upDialogButtons"
+     style="width: 320px; height: 300px; padding: 10px 20px;" closed="true" modal="true">
+    <form  enctype="multipart/form-data" id="upDialogForm" method="post" id="form1">
+        <table>
+            <tr>
+                <td>广告编号:</td>
+                <td>
+                    <input type="text" readonly class="easyui-validatebox" required name="id"/></td>
+            </tr>
+
+            <tr>
+                <td>广告类型:</td>
+                <td>
+                    <select name="categoryId" id="categoryid" style="width: 120px" class="easyui-validatebox" required missingMessage="请选择!!!"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>广告标题:</td>
+                <td>
+                    <input type="text" class="easyui-validatebox" required missingMessage="请填写!!!" name="title"/></td>
+            </tr>
+            <tr>
+                <td> URL :</td>
+                <td>
+                    <input type="text" class="easyui-validatebox" required missingMessage="请填写!!!" name="url"/></td>
+            </tr>
+            <tr>
+                <td>广告状态：</td>
+                   <td> <input type="radio" checked name="status" id="radio" value="1" />
+                    启用
+                    <input type="radio" name="status" id="radio2" value="0" />
+                    停用
+                   </td>
+            </tr>
+            <tr>
+                <td>展示顺序:</td>
+                <td>
+                    <input type="text" class="easyui-validatebox" required missingMessage="请填写!!!" name="sortOrder"/>
+                </td>
+            </tr>
+            <tr>
+                <td>广告图片:</td>
+                <td>
+                       <input type="file" name="pfile" class="easyui-validatebox" style="size:70px" required missingMessage="请选择文件!!!"/>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+
+<!--<%&#45;&#45;添加对话框&#45;&#45;%>-->
+<div id="ShowStreet" class="easyui-dialog" buttons="#AddDialogButtons" style="width:600px; height: 300px; "
+     closed="true" modal="true">
+    <!--工具栏-->
+    <div id="StreetToolBar">
+        <div style="height: 25px;">
+            <a href="javascript:UpdateStreet()" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a>
+            <a href="javascript:DeleteStreetList()" class="easyui-linkbutton" iconCls="icon-remove" plain="true">批量删除</a>&nbsp;&nbsp;
+        </div>
+    </div>
+  <!--<%&#45;&#45;显示街道的区域&#45;&#45;%>-->
+    <table id="streetdis" fitColumns="true" rownumbers="true" toolbar="#StreetToolBar"></table><hr/>
+    <div  style="height:25px;border: 0px" position="fixed">
+        <input type="hidden" class="easyui-validatebox" required name="districtId" id="districtId"/>
+        类型名称:<input type="text" class="easyui-validatebox" required name="name" id="name"/>&nbsp;&nbsp;
+        <a href="javascript:addStreet()" class="easyui-linkbutton" iconCls="icon-ok">添加</a>
+    </div>
+
+</div>
+
+<!--定义保存对话框中的按钮-->
+<div id="upDialogButtons">
+    <a href="javascript:UpDialog()" class="easyui-linkbutton" iconCls="icon-ok">更新</a>
+    <a href="javascript:CloseDialog('upDialog')" class="easyui-linkbutton" iconCls="icon-cancel">取消</a>
+</div>
+<!--定义修改对话框中的按钮-->
+<div id="AddDialogButtons">
+    <a href="javascript:UpStreetDialog()" class="easyui-linkbutton" iconCls="icon-ok">更新</a>
+    <a href="javascript:CloseDialog('upStreetDialog')" class="easyui-linkbutton" iconCls="icon-cancel">取消</a>
+</div>
+</body>
+</html>
